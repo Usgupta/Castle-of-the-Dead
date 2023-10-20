@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
@@ -18,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     private bool onGroundState = true;
     private SpriteRenderer monkSprite;
     private bool faceRightState = true;
+
+    public float mana = 100;
     // public BoolVariable marioFaceRight;
 
     private Rigidbody2D monkBody;
@@ -42,10 +45,12 @@ public class PlayerMovement : MonoBehaviour
 
     private bool moving = false;
     private bool jumpedState = false;
+    
 
     // public GameManager gameManager;
     public UnityEvent gameOver;
-    public UnityEvent playerDamaged;
+    public UnityEvent killEnemy;
+    // public UnityEvent playerDamaged;
 
     // Start is called before the first frame update
     void Awake()
@@ -72,7 +77,9 @@ public class PlayerMovement : MonoBehaviour
         //update animator state
         monkAnimator.SetBool("onGround", onGroundState);
         monkBody.gameObject.layer = 0;
+        
         // SceneManager.activeSceneChanged += SetStartingPosition;
+        StartCoroutine(updateMana());
 
     }
 
@@ -81,6 +88,8 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
+        
+        
         if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && faceRightState)
         {
             faceRightState = false;
@@ -166,6 +175,19 @@ public class PlayerMovement : MonoBehaviour
 
     // }
 
+    IEnumerator updateMana()
+    {
+        while(mana <=100)
+        {
+            mana = Math.Min(mana+10, 100);
+            Debug.Log("new mana "+mana.ToString());
+            yield return new WaitForSecondsRealtime(3);
+            
+        }
+
+       
+    }
+
     void FlipMarioSprite(int value)
     {
     //     if( value == -1 && faceRightState)
@@ -188,8 +210,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void MoveCheck(int value)
     {
-        Debug.Log("move received "+ value.ToString());
-        Debug.Log(moving.ToString());
+        // Debug.Log("move received "+ value.ToString());
+        // Debug.Log(moving.ToString());
         if(value == 0)
             moving = false;
         else 
@@ -225,40 +247,75 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void Kick()
+    {
+        if (mana >= 30)
+        {
+            monkAnimator.Play("monk-kick");
+            mana = mana - 30;
+            Debug.Log(mana);
+        }
+        
+    }
+    
+    public void Punch()
+    {
+        if (mana >= 30)
+        {
+            monkAnimator.Play("monk-punch");
+            mana = mana - 30;
+            Debug.Log(mana);
+        }
+        
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Collided with goomba");
-            if(monkBody.velocity.y <-0.5f)
-                {
-                    Debug.Log("stomping");
-                }
+
+            if (monkAnimator.GetCurrentAnimatorClipInfo(this.gameObject.layer)[0].clip.name == "Kick" ||
+                monkAnimator.GetCurrentAnimatorClipInfo(this.gameObject.layer)[0].clip.name == "Punch")
+            {
+                killEnemy.Invoke();
+                // Debug.Log("kill enemy");
+            }
+            
             else
             {
-                
-                // if (this.gameObject.GetComponent<BuffStateController>().currentPowerupType == PowerupType.StarMan)
-                // {
-                //     Debug.Log("not supposed to do anything");
-                //     StartCoroutine(other.gameObject.GetComponent<EnemyMovement>().FlipGoomba());
-                //     other.gameObject.GetComponent<EnemyMovement>().increaseScore.Invoke(1);
-                // }
-                // else
-                // {
-                //     Debug.Log("right now its this "+this.gameObject.GetComponent<BuffStateController>().currentPowerupType.ToString());
-                //     playerDamaged.Invoke();
-                // }
-                // MarioDie();
+                Debug.Log("kill player");
             }
-        }
+                
+            // if(monkBody.velocity.y <-0.5f)
+            //     {
+            //         Debug.Log("stomping");
+            //     }
+            // else
+            // {
 
-        if(other.isTrigger && other.gameObject.name == "Pit-Limit")
-        {
-            Debug.Log("fallen into pit");
-            playerDamaged.Invoke();
+            // if (this.gameObject.GetComponent<BuffStateController>().currentPowerupType == PowerupType.StarMan)
+            // {
+            //     Debug.Log("not supposed to do anything");
+            //     StartCoroutine(other.gameObject.GetComponent<EnemyMovement>().FlipGoomba());
+            //     other.gameObject.GetComponent<EnemyMovement>().increaseScore.Invoke(1);
+            // }
+            // else
+            // {
+            //     Debug.Log("right now its this "+this.gameObject.GetComponent<BuffStateController>().currentPowerupType.ToString());
+            //     playerDamaged.Invoke();
+            // }
             // MarioDie();
         }
-    }
+        }
+
+        // if(other.isTrigger && other.gameObject.name == "Pit-Limit")
+        // {
+        //     Debug.Log("fallen into pit");
+        //     playerDamaged.Invoke();
+        //     // MarioDie();
+        // }
+    // }
 
     private void MarioDie()
     {

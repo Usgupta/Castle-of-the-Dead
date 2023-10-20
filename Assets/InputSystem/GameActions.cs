@@ -53,6 +53,33 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""kick"",
+                    ""type"": ""Button"",
+                    ""id"": ""77718e77-a7d7-4ac4-b4b3-d9e5a3e60278"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""medidate"",
+                    ""type"": ""Value"",
+                    ""id"": ""7ad55753-954e-42e3-89a3-2e0c49426110"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""punch"",
+                    ""type"": ""Button"",
+                    ""id"": ""305c04e2-92fc-4002-94de-983b60af84ac"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -143,6 +170,39 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
                     ""action"": ""jumphold"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""35376f6e-4cb7-43f4-9506-a019fee795d8"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""kick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e4b55428-4d9d-4db5-af8f-554d1c92ceac"",
+                    ""path"": ""<Keyboard>/m"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""medidate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6a93fc8b-aec2-4561-8e4f-ed1d1d452e64"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""punch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -160,6 +220,9 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
         m_gameplay_move = m_gameplay.FindAction("move", throwIfNotFound: true);
         m_gameplay_jump = m_gameplay.FindAction("jump", throwIfNotFound: true);
         m_gameplay_jumphold = m_gameplay.FindAction("jumphold", throwIfNotFound: true);
+        m_gameplay_kick = m_gameplay.FindAction("kick", throwIfNotFound: true);
+        m_gameplay_medidate = m_gameplay.FindAction("medidate", throwIfNotFound: true);
+        m_gameplay_punch = m_gameplay.FindAction("punch", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -224,6 +287,9 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_gameplay_move;
     private readonly InputAction m_gameplay_jump;
     private readonly InputAction m_gameplay_jumphold;
+    private readonly InputAction m_gameplay_kick;
+    private readonly InputAction m_gameplay_medidate;
+    private readonly InputAction m_gameplay_punch;
     public struct GameplayActions
     {
         private @GameActions m_Wrapper;
@@ -231,6 +297,9 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
         public InputAction @move => m_Wrapper.m_gameplay_move;
         public InputAction @jump => m_Wrapper.m_gameplay_jump;
         public InputAction @jumphold => m_Wrapper.m_gameplay_jumphold;
+        public InputAction @kick => m_Wrapper.m_gameplay_kick;
+        public InputAction @medidate => m_Wrapper.m_gameplay_medidate;
+        public InputAction @punch => m_Wrapper.m_gameplay_punch;
         public InputActionMap Get() { return m_Wrapper.m_gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -249,6 +318,15 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
             @jumphold.started += instance.OnJumphold;
             @jumphold.performed += instance.OnJumphold;
             @jumphold.canceled += instance.OnJumphold;
+            @kick.started += instance.OnKick;
+            @kick.performed += instance.OnKick;
+            @kick.canceled += instance.OnKick;
+            @medidate.started += instance.OnMedidate;
+            @medidate.performed += instance.OnMedidate;
+            @medidate.canceled += instance.OnMedidate;
+            @punch.started += instance.OnPunch;
+            @punch.performed += instance.OnPunch;
+            @punch.canceled += instance.OnPunch;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -262,6 +340,15 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
             @jumphold.started -= instance.OnJumphold;
             @jumphold.performed -= instance.OnJumphold;
             @jumphold.canceled -= instance.OnJumphold;
+            @kick.started -= instance.OnKick;
+            @kick.performed -= instance.OnKick;
+            @kick.canceled -= instance.OnKick;
+            @medidate.started -= instance.OnMedidate;
+            @medidate.performed -= instance.OnMedidate;
+            @medidate.canceled -= instance.OnMedidate;
+            @punch.started -= instance.OnPunch;
+            @punch.performed -= instance.OnPunch;
+            @punch.canceled -= instance.OnPunch;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -293,5 +380,8 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnJumphold(InputAction.CallbackContext context);
+        void OnKick(InputAction.CallbackContext context);
+        void OnMedidate(InputAction.CallbackContext context);
+        void OnPunch(InputAction.CallbackContext context);
     }
 }

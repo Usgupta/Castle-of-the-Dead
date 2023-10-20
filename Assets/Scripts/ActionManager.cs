@@ -11,7 +11,11 @@ public class ActionManager : MonoBehaviour
     public UnityEvent jumpHold;
     public UnityEvent<int> moveCheck;
 
-    public UnityEvent fire;
+    public UnityEvent kick;
+
+    public UnityEvent meditate;
+
+    public UnityEvent punch;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +25,10 @@ public class ActionManager : MonoBehaviour
         gameActions.gameplay.jumphold.performed += onJumpHoldAction;
         gameActions.gameplay.move.started += onMoveAction;
         gameActions.gameplay.move.canceled += onMoveAction;
-        // gameActions.gameplay.fire.started += OnFireAction;
-        // gameActions.gameplay.fire.canceled += OnFireAction;
-        // gameActions.gameplay.fire.performed += OnFireAction;
+        gameActions.gameplay.kick.started += OnKickAction;
+        gameActions.gameplay.kick.canceled += OnKickAction;
+        gameActions.gameplay.kick.performed += OnKickAction;
+        gameActions.gameplay.punch.performed += OnPunchAction;
     }
 
     // Update is called once per frame
@@ -66,7 +71,7 @@ public class ActionManager : MonoBehaviour
     {
         if(context.started)
         {
-            Debug.Log("move was started");
+            // Debug.Log("move was started");
             int faceRight = context.ReadValue<float>() >0? 1:-1;
             moveCheck.Invoke(faceRight);
             // Debug.Log($"move amount {fa}");
@@ -106,12 +111,32 @@ public class ActionManager : MonoBehaviour
 
     }
 
-    public void OnFireAction(InputAction.CallbackContext context)
+    public void OnKickAction(InputAction.CallbackContext context)
     {
         if (context.performed)
         {   
-            Debug.Log("fire action");
-            fire.Invoke();
+            Debug.Log("kick action");
+            kick.Invoke();
+        }
+        
+    }
+    
+    public void OnMedidateAction(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {   
+            Debug.Log("medidate action");
+            meditate.Invoke();
+        }
+        
+    }
+    
+    public void OnPunchAction(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {   
+            Debug.Log("punch action");
+            punch.Invoke();
         }
         
     }
