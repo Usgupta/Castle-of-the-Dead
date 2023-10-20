@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private bool faceRightState = true;
 
     public float mana = 100;
-    // public BoolVariable marioFaceRight;
+    public BoolVariable marioFaceRight;
 
     private Rigidbody2D monkBody;
 
@@ -90,21 +90,21 @@ public class PlayerMovement : MonoBehaviour
     {
         
         
-        if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && faceRightState)
-        {
-            faceRightState = false;
-            monkSprite.flipX = true;
-            // if (marioBody.velocity.x > 0.1f)
-                // marioAnimator.SetTrigger("onSkid");
-        }
-
-        if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && !faceRightState)
-        {
-            faceRightState = true;
-            monkSprite.flipX = false;
-            // if (marioBody.velocity.x < -0.1f)
-            //     marioAnimator.SetTrigger("onSkid");
-        }
+        // if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && faceRightState)
+        // {
+        //     faceRightState = false;
+        //     monkSprite.flipX = true;
+        //     // if (marioBody.velocity.x > 0.1f)
+        //         // marioAnimator.SetTrigger("onSkid");
+        // }
+        //
+        // if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && !faceRightState)
+        // {
+        //     faceRightState = true;
+        //     monkSprite.flipX = false;
+        //     // if (marioBody.velocity.x < -0.1f)
+        //     //     marioAnimator.SetTrigger("onSkid");
+        // }
         monkAnimator.SetFloat("xSpeed", Mathf.Abs(monkBody.velocity.x));
     }
 
@@ -190,33 +190,34 @@ public class PlayerMovement : MonoBehaviour
 
     void FlipMarioSprite(int value)
     {
-    //     if( value == -1 && faceRightState)
-    //     {
-    //         // faceRightState = false;
-    //         // updateMarioShouldFaceRight(false);
-    //         marioSprite.flipX = true;
-    //         if (marioBody.velocity.x > 0.1f)
-    //             // marioAnimator.SetTrigger("onSkid");
-    //
-    //     } 
-    //     else if (value == 1 && !faceRightState)
-    //     {
-    //         // updateMarioShouldFaceRight(true);
-    //         marioSprite.flipX = false;
-    //         if (marioBody.velocity.x < -0.1f)
-    //             marioAnimator.SetTrigger("onSkid");
-    //     }
+    if( value == -1 && faceRightState)
+    {
+        // faceRightState = false;
+        updateMarioShouldFaceRight(false);
+        monkSprite.flipX = true;
+        // if (marioBody.velocity.x > 0.1f)
+            // marioAnimator.SetTrigger("onSkid");
+    
+    } 
+    else if (value == 1 && !faceRightState)
+    {
+        updateMarioShouldFaceRight(true);
+        monkSprite.flipX = false;
+        // if (monkBody.velocity.x < -0.1f)
+        //     marioAnimator.SetTrigger("onSkid");
+    }
     }
 
     public void MoveCheck(int value)
     {
-        // Debug.Log("move received "+ value.ToString());
+        
         // Debug.Log(moving.ToString());
         if(value == 0)
             moving = false;
         else 
         {
-            // FlipMarioSprite(value);
+            Debug.Log("move received "+ value.ToString());
+            FlipMarioSprite(value);
             moving = true;
             Move(value);
         }
@@ -225,6 +226,7 @@ public class PlayerMovement : MonoBehaviour
     void Move(int value)
     {
         Vector2 movement = new Vector2(value, 0);
+        Debug.Log("move ment is in" + movement.ToString());
 
         if (monkBody.velocity.magnitude <= maxSpeed)
             monkBody.AddForce(movement * speed);
@@ -420,11 +422,11 @@ public class PlayerMovement : MonoBehaviour
     //     }
     // }
     //
-    // private void updateMarioShouldFaceRight(bool value)
-    // {
-    //     faceRightState = value;
-    //     marioFaceRight.SetValue(value);
-    // }
+    private void updateMarioShouldFaceRight(bool value)
+    {
+        faceRightState = value;
+        marioFaceRight.SetValue(value);
+    }
     //
     // public void RequestPowerupEffect(IPowerup i)
     // {

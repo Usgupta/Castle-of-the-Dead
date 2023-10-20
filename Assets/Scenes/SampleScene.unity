@@ -1992,6 +1992,7 @@ MonoBehaviour:
   speed: 0
   maxSpeed: 0
   upSpeed: 0
+  mana: 100
   monkAnimator: {fileID: 1525387675}
   deathImpulse: 0
   gameCamera: {fileID: 519420032}

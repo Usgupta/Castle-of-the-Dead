@@ -71,7 +71,8 @@ public class ActionManager : MonoBehaviour
     {
         if(context.started)
         {
-            // Debug.Log("move was started");
+            Debug.Log("move was started");
+            Debug.Log(context.ReadValue<float>());
             int faceRight = context.ReadValue<float>() >0? 1:-1;
             moveCheck.Invoke(faceRight);
             // Debug.Log($"move amount {fa}");

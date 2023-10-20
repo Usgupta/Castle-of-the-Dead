@@ -5,43 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb99cea-fdd4-46c5-94bd-58da97abf7b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.50033-midterm-partb-Usgupta/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/Burning-Ghoul.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/Burning-Ghoul/burning-ghoul-anim.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/Burning-Ghoul/burning-ghoul-anim.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/Burning-Ghoul/burning-ghoul-run.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/Burning-Ghoul/burning-ghoul-run.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/Burning-Ghoul/ghoul-run.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/Burning-Ghoul/ghoul-run.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/Monk/monk-kick.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/Monk/monk-kick.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/Monk/monk-medidate.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/Monk/monk-medidate.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/Monk/monk-punch.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animation/Monk/monk-punch.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BurningGhoulMovement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BurningGhoulMovement.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameEvent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameEventListener.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameEventListener.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/OnKillEnemy.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/OnKillEnemy.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SimpleGameEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SimpleGameEvent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SimpleGameEventListener.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SimpleGameEventListener.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Monk/Monk.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Monk/Monk.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputSystem/GameActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem/GameActions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputSystem/GameActions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem/GameActions.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Scene1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Scene1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/burning-ghoul.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/burning-ghoul.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.50033-midterm-partb-Usgupta/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.50033-midterm-partb-Usgupta/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ActionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ActionManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameConstants.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameConstants.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +106,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697718973148</updated>
-      <workItem from="1697718982024" duration="25188000" />
+      <workItem from="1697718982024" duration="26475000" />
     </task>
     <servers />
   </component>
