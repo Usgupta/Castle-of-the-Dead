@@ -9,13 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ed2f805a9b924b6db9f229d7264575d, type: 3}
-  m_Name: GameConstants
+  m_Script: {fileID: 11500000, guid: 1cf6a7e1724844bc91155b57e156f236, type: 3}
+  m_Name: OnGameOver
   m_EditorClassIdentifier: 
-  speed: 30
-  maxSpeed: 30
-  upSpeed: 25
-  flickerInterval: 5
-  flickerspeed: 20
-  ghoulPatrolTime: 1
-  ghoulMaxOffset: 2

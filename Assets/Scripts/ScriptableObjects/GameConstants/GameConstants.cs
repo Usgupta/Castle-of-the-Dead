@@ -9,6 +9,7 @@ public class GameConstants : ScriptableObject
     public int upSpeed;
     public int flickerInterval;
     public int flickerspeed;
+    public Vector3 monkStartingposition = new Vector3(-4f, -2.98f, 0f); 
 
     //Ghoul's movement
     public float ghoulPatrolTime;

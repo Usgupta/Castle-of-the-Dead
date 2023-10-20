@@ -34,6 +34,10 @@ public class HUDManager : MonoBehaviour
     void Start()
     {
         gameScore.Value = 0;
+        gameOverPanel.SetActive(false);
+        Time.timeScale = 1.0f;
+
+
         // SceneManager.activeSceneChanged += SetCamera;
     }
 
@@ -43,20 +47,19 @@ public class HUDManager : MonoBehaviour
 
     }
 
-    public void GameStart()
-    {   
-        // hide gameover panel
-        gameOverPanel.SetActive(false);
-        scoreText.transform.localPosition = scoreTextPosition[0];
-        Debug.Log("hello start hud");
-        // Debug.Log(scoreText.GetComponent<TextMeshProUGUI>().text);
-        // restartButton.localPosition = restartButtonPosition[0];
-        // highScoreText.GetComponent<TextMeshProUGUI>().gameObject.SetActive(false);
-        // highScoreText.GetComponent<TextMeshProUGUI>().text = "Top -" + gameScore.previousHighestValue.ToString("D6");
-        BackToMain.SetActive(false);
-        Time.timeScale = 1.0f;
-        
-    }
+    // public void GameStart()
+    // {   
+    //     // hide gameover panel
+    //     gameOverPanel.SetActive(false);
+    //     // scoreText.transform.localPosition = scoreTextPosition[0];
+    //     Debug.Log("hello start hud");
+    //     // Debug.Log(scoreText.GetComponent<TextMeshProUGUI>().text);
+    //     // restartButton.localPosition = restartButtonPosition[0];
+    //     // highScoreText.GetComponent<TextMeshProUGUI>().gameObject.SetActive(false);
+    //     // highScoreText.GetComponent<TextMeshProUGUI>().text = "Top -" + gameScore.previousHighestValue.ToString("D6");
+    //     // BackToMain.SetActive(false);
+    //     
+    // }
 
     public void SetScore(int score)
     {   

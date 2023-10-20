@@ -21,10 +21,10 @@ public class ActionManager : MonoBehaviour
     {
         gameActions = new GameActions();
         gameActions.gameplay.Enable();
-        gameActions.gameplay.jump.performed += onJumpAction;
+        gameActions.gameplay.jump.performed += OnJumpAction;
         gameActions.gameplay.jumphold.performed += onJumpHoldAction;
-        gameActions.gameplay.move.started += onMoveAction;
-        gameActions.gameplay.move.canceled += onMoveAction;
+        gameActions.gameplay.move.started += OnMoveAction;
+        gameActions.gameplay.move.canceled += OnMoveAction;
         gameActions.gameplay.kick.started += OnKickAction;
         gameActions.gameplay.kick.canceled += OnKickAction;
         gameActions.gameplay.kick.performed += OnKickAction;
@@ -37,48 +37,30 @@ public class ActionManager : MonoBehaviour
         
     }
 
-    public void onJumpHoldAction(InputAction.CallbackContext context){
-        if(context.started)
-            {
-                // Debug.Log("Jumphold was started");
-            }
-        else if(context.performed)
+    public void onJumpHoldAction(InputAction.CallbackContext context){ 
+        if(context.performed)
         {   
             jumpHold.Invoke();
-            // Debug.Log("Jumphold was pefermoed");
         }    
-            
-        // else if(context.canceled)
-            // Debug.Log("Jumphold was cancelled");
+        
     }
 
-    public void onJumpAction(InputAction.CallbackContext context){
-        if(context.started)
-        {
-            // Debug.Log("Jump was started");
-        }
-        else if(context.performed)
+    public void OnJumpAction(InputAction.CallbackContext context){
+        if(context.performed)
         {
             jump.Invoke();
-            // Debug.Log("Jump was pefermoed");
         }
-            
-        // else if(context.canceled)
-        //     Debug.Log("Jump was cancelled");
+        
     }
 
-    public void onMoveAction(InputAction.CallbackContext context)
+    public void OnMoveAction(InputAction.CallbackContext context)
     {
         if(context.started)
         {
-            Debug.Log("move was started");
-            Debug.Log(context.ReadValue<float>());
             int faceRight = context.ReadValue<float>() >0? 1:-1;
             moveCheck.Invoke(faceRight);
-            // Debug.Log($"move amount {fa}");
         }
         if(context.canceled){
-            Debug.Log("move stopped");
             moveCheck.Invoke(0);
 
         }
