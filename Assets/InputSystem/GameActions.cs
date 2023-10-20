@@ -152,7 +152,18 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""cad4e883-d65b-4930-9ce6-06f04839c335"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8cb052a9-02d5-4849-b634-37fd90a75030"",
+                    ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -163,7 +174,18 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""2f8bf960-0ca9-4b76-aaee-dff1019da9bf"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""jumphold"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b8868382-3a2f-4d2d-a3bb-a6d0f25ed113"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -174,7 +196,7 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""35376f6e-4cb7-43f4-9506-a019fee795d8"",
-                    ""path"": ""<Keyboard>/k"",
+                    ""path"": ""<Keyboard>/z"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -196,7 +218,7 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""6a93fc8b-aec2-4561-8e4f-ed1d1d452e64"",
-                    ""path"": ""<Keyboard>/enter"",
+                    ""path"": ""<Keyboard>/x"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

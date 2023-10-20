@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -32,16 +33,12 @@ public class PlayerMovement : MonoBehaviour
     private bool moving = false;
     private bool jumpedState = false;
     public UnityEvent gameOver;
-    public UnityEvent killEnemy;
+    public UnityEvent<String> killEnemy;
 
     public IntVariable gameMana;
     public UnityEvent<int> changeMana;
 
     // Start is called before the first frame update
-    void Awake()
-    {
-        // GameManager.instance.gameRestart.AddListener(RestartGame);
-    }
 
     void Start()
     {
@@ -66,10 +63,8 @@ public class PlayerMovement : MonoBehaviour
     {
         while(gameMana.Value <=100)
         {
-            
-            // gameMana.Value = Math.Min(gameMana.Value+10, 100);
-            changeMana.Invoke(5);
-            Debug.Log("new mana "+gameMana.Value.ToString());
+            if(gameMana.Value!=100)
+                changeMana.Invoke(10);
             yield return new WaitForSecondsRealtime(3);
             
         }
@@ -263,12 +258,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Collided with ghoul");
+            
+            Debug.Log("Collided with " + other.gameObject.name);
 
             if (monkAnimator.GetCurrentAnimatorClipInfo(this.gameObject.layer)[0].clip.name == "Kick" ||
                 monkAnimator.GetCurrentAnimatorClipInfo(this.gameObject.layer)[0].clip.name == "Punch")
             {
-                killEnemy.Invoke();
+                killEnemy.Invoke(other.gameObject.name);
                 // Debug.Log("kill enemy");
             }
             
@@ -283,11 +279,27 @@ public class PlayerMovement : MonoBehaviour
 
        
 
-    private void MonkDie()
+    public void MonkDie()
     {
-        // monkAnimator.Play("monk-die");
-        // alive = false;
+        monkAnimator.Play("monk-die");
+        StartCoroutine(BlinkSpriteRenderer());
+        alive = false;
         // DamageMario();
+    }
+    
+    private IEnumerator BlinkSpriteRenderer()
+    {
+        // monkSprite = GetComponent<SpriteRenderer>();
+        for (int i = 0; i < gameConstants.flickerspeed; i++)
+        {
+            monkSprite.enabled = !monkSprite.enabled;
+
+            // Wait for the specified blink interval
+            yield return new WaitForSeconds((int)(gameConstants.flickerInterval/gameConstants.flickerspeed));
+        }
+        
+        this.gameObject.SetActive(false);
+        monkSprite.enabled = true;
     }
 
     public void RestartGame()
@@ -337,7 +349,7 @@ public class PlayerMovement : MonoBehaviour
         monkAudio.PlayOneShot(monkKickAudio);
     }
 
-    void PlayDeathImpluse()
+    public void PlayDeathImpluse()
     {
         // monkBody.velocity = Vector2.zero;
         // monkBody.AddForce(Vector2.up * deathImpulse, ForceMode2D.Impulse);

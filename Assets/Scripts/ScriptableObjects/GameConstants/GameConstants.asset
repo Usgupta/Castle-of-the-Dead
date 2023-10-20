@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed2f805a9b924b6db9f229d7264575d, type: 3}
   m_Name: GameConstants
   m_EditorClassIdentifier: 
-  maxlives: 0
   speed: 40
   maxSpeed: 40
   upSpeed: 30
-  deathImpulse: 0
-  marioStartingPostion: {x: 0, y: 0, z: 0}
-  flickerInterval: 0
+  flickerInterval: 5
+  flickerspeed: 20
   ghoulPatrolTime: 1
   ghoulMaxOffset: 2

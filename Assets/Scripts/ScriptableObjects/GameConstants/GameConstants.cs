@@ -8,6 +8,7 @@ public class GameConstants : ScriptableObject
     public int maxSpeed;
     public int upSpeed;
     public int flickerInterval;
+    public int flickerspeed;
 
     //Ghoul's movement
     public float ghoulPatrolTime;
