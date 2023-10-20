@@ -12,12 +12,7 @@ public class GameManager : MonoBehaviour
     public UnityEvent<int> scoreChange;
     public UnityEvent<int> manaChange;
     public UnityEvent gameOver;
-    // public UnityEvent updateScore;
-    // public UnityEvent<IPowerup> powerupAffectsPlayer;
-    // public UnityEvent<IPowerup> powerupAffectsManager;
-
-
-    private int score = 0;
+    // scriptable object variables
     public IntVariable gameScore;
     public IntVariable gameMana;
 
@@ -25,8 +20,6 @@ public class GameManager : MonoBehaviour
     {
         gameStart.Invoke();
         Time.timeScale = 1.0f;
-        //subsribe to scene manager to set up when scene changes
-        SceneManager.activeSceneChanged += SceneSetup;
     }
 
     // Update is called once per frame
@@ -90,18 +83,7 @@ public class GameManager : MonoBehaviour
         SetScore(gameScore.Value);
         
     }
-
-    public void RequestPowerupEffect()
-    {
-        
-    }
-
-    // public void FilterAndCastPowerup(IPowerup i)
-    // {   
-    //     Debug.Log("invoking request "+ i.ToString());
-    //     powerupAffectsPlayer.Invoke(i);
-    //     powerupAffectsManager.Invoke(i);
-    // }
+    
 
     public void PauseGame()
     {

@@ -14,9 +14,7 @@ public class CameraController : MonoBehaviour
     private float endX; //largest x-coordinate of the camera
     private float viewportHalfWidth;
     // Start is called before the first frame update
-
-
-
+    
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -25,8 +23,6 @@ public class CameraController : MonoBehaviour
         offset = this.transform.position.x - player.position.x;
         startX = this.transform.position.x;
         endX = endLimit.transform.position.x - viewportHalfWidth;
-        // endLimit = GameObject.FindGameObjectWithTag("Limit").transform;
-        // SceneManager.activeSceneChanged += SetSceneEndLimit;
     }
 
     // Update is called once per frame
@@ -36,20 +32,9 @@ public class CameraController : MonoBehaviour
         // Debug.Log("new position is " + desiredX.ToString());
         // Debug.Log("start is "+ startX.ToString());                
         // Debug.Log("end is "+ endX.ToString());
-
-
         if (desiredX > startX && desiredX < endX)
 
             this.transform.position = new Vector3(desiredX, this.transform.position.y, this.transform.position.z);
         
     }
-
-    // public void SetSceneEndLimit(Scene current, Scene next)
-    // {
-    //     if (next.name == "World-1-2")
-    //     {
-    //         endLimit = GameObject.FindGameObjectWithTag("Limit").transform;
-    //         this.Update();
-    //     }
-    // }
 }

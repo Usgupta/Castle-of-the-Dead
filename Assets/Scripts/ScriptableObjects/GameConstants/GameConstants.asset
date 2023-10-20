@@ -19,5 +19,5 @@ MonoBehaviour:
   deathImpulse: 0
   marioStartingPostion: {x: 0, y: 0, z: 0}
   flickerInterval: 0
-  goombaPatrolTime: 2
-  goombaMaxOffset: 1
+  ghoulPatrolTime: 1
+  ghoulMaxOffset: 2

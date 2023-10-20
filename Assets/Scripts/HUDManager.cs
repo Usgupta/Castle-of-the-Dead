@@ -18,8 +18,6 @@ public class HUDManager : MonoBehaviour
 
     private Vector3 highScoreTextPosition = new Vector3(51, -123, 0.0f);
 
-    
-
     public GameObject scoreText;
     public Transform restartButton;
 
@@ -30,19 +28,8 @@ public class HUDManager : MonoBehaviour
     public GameObject BackToMain;
 
     public GameObject manaText;
-    // public Canvas canvas;
-
-    void Awake()
-    {
-        // GameManager.instance.gameStart.AddListener(GameStart);
-        // GameManager.instance.gameRestart.AddListener(GameStart);
-        // GameManager.instance.gameOver.AddListener(GameOver);
-        // GameManager.instance.scoreChange.AddListener(SetScore);
-
-    }
     
     // Start is called before the first frame update
-    
     
     void Start()
     {

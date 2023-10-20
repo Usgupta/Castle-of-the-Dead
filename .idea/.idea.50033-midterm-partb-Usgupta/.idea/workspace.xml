@@ -5,8 +5,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb99cea-fdd4-46c5-94bd-58da97abf7b9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GhoulScripts/BurningGhoulMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.50033-midterm-partb-Usgupta/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.50033-midterm-partb-Usgupta/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/burning-ghoul.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/burning-ghoul.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameMana.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameMana.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BurningGhoulMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BurningGhoulMovement.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GhoulScripts/BurningGhoulMovement.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameConstants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameConstants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/GameEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/GameEvent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameEventListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/Listeners/GameEventListener.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameEventListener.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/Listeners/GameEventListener.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HUDManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HUDManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IntGameEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/IntGameEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IntGameEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/IntGameEvent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IntGameEventListner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/Listeners/IntGameEventListner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IntGameEventListner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/Listeners/IntGameEventListner.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IntVariable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/Variables/IntVariable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IntVariable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/Variables/IntVariable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerScripts/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerScripts/PlayerMovement.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/BoolVariable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/Variables/BoolVariable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/BoolVariable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/Variables/BoolVariable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameConstants.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameConstants.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/OnIncrementMana.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/GameEventInstances/OnIncrementMana.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/OnIncrementMana.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/GameEventInstances/OnIncrementMana.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/OnIncrementScore.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/GameEventInstances/OnIncrementScore.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/OnIncrementScore.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/GameEventInstances/OnIncrementScore.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/OnKillEnemy.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/GameEventInstances/OnKillEnemy.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/OnKillEnemy.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/GameEventInstances/OnKillEnemy.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/OnUpdateMana.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/GameEventInstances/OnUpdateMana.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/OnUpdateMana.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/GameEventInstances/OnUpdateMana.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/OnUpdateScore.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/GameEventInstances/OnUpdateScore.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/OnUpdateScore.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/GameEventInstances/OnUpdateScore.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/Variable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/Variables/Variable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/Variable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/Variables/Variable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SimpleGameEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/SimpleGameEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SimpleGameEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/SimpleGameEvent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SimpleGameEventListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/Listeners/SimpleGameEventListener.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SimpleGameEventListener.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/Listeners/SimpleGameEventListener.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +144,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697718973148</updated>
-      <workItem from="1697718982024" duration="40161000" />
+      <workItem from="1697718982024" duration="45359000" />
     </task>
     <servers />
   </component>

@@ -1,12 +1,7 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -19,52 +14,28 @@ public class PlayerMovement : MonoBehaviour
     private bool onGroundState = true;
     private SpriteRenderer monkSprite;
     private bool faceRightState = true;
-
-    public float mana = 100;
     public BoolVariable marioFaceRight;
 
     private Rigidbody2D monkBody;
 
-    // public TextMeshProUGUI scoreText;
-    // public GameObject enemies;
-    // public JumpOverGoomba jumpOverGoomba;
-
-    // public QuestionBox questionBox;
-
-
-    // public GameObject GameOverScreen;
-    // public GameObject RestartButton;
     public Animator monkAnimator;
     public AudioSource monkAudio;
-
     public AudioClip monkJumpAudio;
-
     public AudioClip monkPunchAudio;
-
     public AudioClip monkKickAudio;
 
     public AudioClip monkDieAudio;
-    // public AudioSource marioDeath;
-    public float deathImpulse;
-
     [System.NonSerialized]
     public bool alive = true;
     public Transform gameCamera;
 
     private bool moving = false;
     private bool jumpedState = false;
-    
-
-    // public GameManager gameManager;
     public UnityEvent gameOver;
     public UnityEvent killEnemy;
 
     public IntVariable gameMana;
     public UnityEvent<int> changeMana;
-    
-
-    // public UnityEvent<int> changeMana;
-    // public UnityEvent playerDamaged;
 
     // Start is called before the first frame update
     void Awake()
@@ -77,26 +48,33 @@ public class PlayerMovement : MonoBehaviour
         speed = gameConstants.speed;
         maxSpeed = gameConstants.maxSpeed;
         upSpeed = gameConstants.upSpeed;
-        deathImpulse = gameConstants.deathImpulse;
         gameMana.Value = 100;
-        // gameMana = new IntVariable();
-
-        // speed = 100;
-        // maxSpeed = 100;
-        // upSpeed = 10;
-        // deathImpulse = 100;
-
+        
         Application.targetFrameRate = 30;
         monkBody = GetComponent<Rigidbody2D>();
         monkSprite = GetComponent<SpriteRenderer>();
-        // GameOverScreen.SetActive(false);
+
         //update animator state
         monkAnimator.SetBool("onGround", onGroundState);
         monkBody.gameObject.layer = 0;
         
-        // SceneManager.activeSceneChanged += SetStartingPosition;
         StartCoroutine(updateMana());
 
+    }
+    
+    IEnumerator updateMana()
+    {
+        while(gameMana.Value <=100)
+        {
+            
+            // gameMana.Value = Math.Min(gameMana.Value+10, 100);
+            changeMana.Invoke(5);
+            Debug.Log("new mana "+gameMana.Value.ToString());
+            yield return new WaitForSecondsRealtime(3);
+            
+        }
+
+       
     }
 
     // Update is called once per frame
@@ -191,20 +169,7 @@ public class PlayerMovement : MonoBehaviour
 
     // }
 
-    IEnumerator updateMana()
-    {
-        while(gameMana.Value <=100)
-        {
-            
-            // gameMana.Value = Math.Min(gameMana.Value+10, 100);
-            changeMana.Invoke(5);
-            Debug.Log("new mana "+gameMana.Value.ToString());
-            yield return new WaitForSecondsRealtime(3);
-            
-        }
-
-       
-    }
+    
 
     void FlipMarioSprite(int value)
     {
@@ -298,7 +263,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Collided with goomba");
+            Debug.Log("Collided with ghoul");
 
             if (monkAnimator.GetCurrentAnimatorClipInfo(this.gameObject.layer)[0].clip.name == "Kick" ||
                 monkAnimator.GetCurrentAnimatorClipInfo(this.gameObject.layer)[0].clip.name == "Punch")
@@ -312,36 +277,11 @@ public class PlayerMovement : MonoBehaviour
                 MonkDie();
                 Debug.Log("kill player");
             }
-                
-            // if(monkBody.velocity.y <-0.5f)
-            //     {
-            //         Debug.Log("stomping");
-            //     }
-            // else
-            // {
-
-            // if (this.gameObject.GetComponent<BuffStateController>().currentPowerupType == PowerupType.StarMan)
-            // {
-            //     Debug.Log("not supposed to do anything");
-            //     StartCoroutine(other.gameObject.GetComponent<EnemyMovement>().FlipGoomba());
-            //     other.gameObject.GetComponent<EnemyMovement>().increaseScore.Invoke(1);
-            // }
-            // else
-            // {
-            //     Debug.Log("right now its this "+this.gameObject.GetComponent<BuffStateController>().currentPowerupType.ToString());
-            //     playerDamaged.Invoke();
-            // }
-            // MarioDie();
+            
         }
         }
 
-        // if(other.isTrigger && other.gameObject.name == "Pit-Limit")
-        // {
-        //     Debug.Log("fallen into pit");
-        //     playerDamaged.Invoke();
-        //     // MarioDie();
-        // }
-    // }
+       
 
     private void MonkDie()
     {
@@ -350,13 +290,6 @@ public class PlayerMovement : MonoBehaviour
         // DamageMario();
     }
 
-    // public void RestartButtonCallback(int input)
-    // {
-    //     // Debug.Log("Restart");
-    //     RestartGame();
-    //     Time.timeScale = 1.0f;
-    // }
-
     public void RestartGame()
     {
         //reset position
@@ -364,22 +297,12 @@ public class PlayerMovement : MonoBehaviour
         //reset face direction
         monkSprite.flipX = false;
         faceRightState = true;
-        //reset score
-        // scoreText.text = "Score: 0";
-        // jumpOverGoomba.score = 0;
    
         //stop mario
         monkBody.velocity = Vector2.zero;
-
-        //remove Game Over Screen
-        // scoreText.transform.localPosition = new Vector3(-556.49f, 459, 0);
-        // RestartButton.transform.localPosition = new Vector3(866, 454, 0);
-        // GameOverScreen.SetActive(false);
-        // marioAnimator.SetTrigger("gameRestart");
         alive = true;
         gameCamera.transform.localPosition = new Vector3(1.69f, 0, -10);
         monkBody.gameObject.layer = 1;
-        // GoToEntryAnimationStateForAllPrefabInstances();
     }
 
     void GameOverScene()
@@ -423,56 +346,17 @@ public class PlayerMovement : MonoBehaviour
         // this.gameObject.SetActive(false);
     }
 
-    // public void GoToEntryAnimationStateForAllPrefabInstances()
-    // {
-    //     // Get all of the prefab instances in the current scene.
-    //     QuestionBox[] prefabInstances = GameObject.FindObjectsOfType<QuestionBox>();
-
-    //     // Iterate over all of the prefab instances and set their entry animation state.
-    //     foreach (QuestionBox prefabInstance in prefabInstances)
-    //     {
-    //         if (prefabInstance.GetComponent<Animator>() != null)
-    //         {
-    //             prefabInstance.QuestionBoxAnimator.SetBool("isBoxStatic",false);
-    //             prefabInstance.boxIsStatic = false;
-    //             prefabInstance.QuestionBoxBody.bodyType = RigidbodyType2D.Dynamic;
-    //             prefabInstance.QuestionBoxCoinAnimator.StopPlayback();
-    //             // prefabInstance.QuestionBoxCoinAnimator.Play("coin-spawn");
-    //             // Debug.Log("restarting arudio check");
-    //             // Debug.Log(prefabInstance.QuestionBoxCoinAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime);
-    //             // Debug.Log("restarting arudio check done");
-
-    //         }
-    //     }
-    // }
-
     public void SetStartingPosition(Scene current, Scene next)
     {
         if(next.name == "World-1-2")
             monkBody.transform.position = new Vector3(-11.72f, -6.18f, 0);
     }
 
-    // public void DamageMario()
-    // {
-    //     if (this.gameObject.GetComponent<BuffStateController>().currentPowerupType != PowerupType.StarMan)
-    //         // Debug.Log("dont do anythingggg stopp");
-    //     {
-    //         GetComponent<MarioStateController>().SetPowerup(PowerupType.Damage);
-    //
-    //
-    //     }
-    // }
-    //
+
     private void updateMarioShouldFaceRight(bool value)
     {
         faceRightState = value;
         marioFaceRight.SetValue(value);
     }
-    //
-    // public void RequestPowerupEffect(IPowerup i)
-    // {
-    //     Debug.Log("mario request is called "+ i.ToString());
-    //     i.ApplyPowerup(this);
-    //     // throw new System.NotImplementedException();
-    // }
+   
 }

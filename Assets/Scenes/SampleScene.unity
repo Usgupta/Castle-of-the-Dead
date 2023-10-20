@@ -1727,151 +1727,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd3aecdd24f4e4b7c93e674e2c3c715c, type: 3}
---- !u!1 &1142138114 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9061616033584334113, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
-  m_PrefabInstance: {fileID: 7032695400749325803}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1142138115 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7059936829290238040, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
-  m_PrefabInstance: {fileID: 7032695400749325803}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1142138116 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 920415353837620541, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
-  m_PrefabInstance: {fileID: 7032695400749325803}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1142138114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb48a60ca92f34aee8111bacb061e89c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1142138120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1142138114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a1864b7901e44beb165f5b818f09c7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 1c3444feabf89430797dc7353e019b24, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1142138116}
-        m_TargetAssemblyTypeName: BurningGhoulMovement, Assembly-CSharp
-        m_MethodName: DestroyEnemy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!82 &1142138121
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1142138114}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 7850949991033163605, guid: 1c98219cd1332405c94461ae79c227a9, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 4e5ca240579004e86a5a334dd33b5408, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1001 &1150852424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2482,7 +2337,6 @@ MonoBehaviour:
   speed: 0
   maxSpeed: 0
   upSpeed: 0
-  mana: 100
   marioFaceRight: {fileID: 11400000, guid: 20a872a2ef90d4e508bf509bfede1e8c, type: 2}
   monkAnimator: {fileID: 1525387675}
   monkAudio: {fileID: 1525387676}
@@ -2490,7 +2344,6 @@ MonoBehaviour:
   monkPunchAudio: {fileID: 8300000, guid: a78d03c264d804eb086131de9c984d1d, type: 3}
   monkKickAudio: {fileID: 8300000, guid: 25e7bc4d9940b409eba4798b2777bd39, type: 3}
   monkDieAudio: {fileID: 8300000, guid: 3c21d926d921542d28c57c29456dbbec, type: 3}
-  deathImpulse: 0
   gameCamera: {fileID: 519420032}
   gameOver:
     m_PersistentCalls:
@@ -3744,58 +3597,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1571349108}
     m_Modifications:
-    - target: {fileID: 181816444627023111, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
-      propertyPath: m_Size.x
-      value: 0.36205387
-      objectReference: {fileID: 0}
-    - target: {fileID: 181816444627023111, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
-      propertyPath: m_Size.y
-      value: 0.43394038
-      objectReference: {fileID: 0}
-    - target: {fileID: 181816444627023111, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.049157232
-      objectReference: {fileID: 0}
-    - target: {fileID: 181816444627023111, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.21554
-      objectReference: {fileID: 0}
-    - target: {fileID: 181816444627023111, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 920415353837620541, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
-      propertyPath: EnemyAudio
-      value: 
-      objectReference: {fileID: 1142138121}
-    - target: {fileID: 920415353837620541, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
-      propertyPath: EnemyAnimator
-      value: 
-      objectReference: {fileID: 1142138115}
-    - target: {fileID: 920415353837620541, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
-      propertyPath: increaseScore.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 920415353837620541, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
-      propertyPath: increaseScore.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 11400000, guid: 0a26b2cd96e794a92a120dab99612706, type: 2}
-    - target: {fileID: 920415353837620541, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
-      propertyPath: increaseScore.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 920415353837620541, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
-      propertyPath: increaseScore.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Raise
-      objectReference: {fileID: 0}
-    - target: {fileID: 920415353837620541, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
-      propertyPath: increaseScore.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameEvent`1[[System.Int32, mscorlib
-      objectReference: {fileID: 0}
-    - target: {fileID: 920415353837620541, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
-      propertyPath: increaseScore.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 7742841841453958419, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3840,28 +3641,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: burning-ghoul
       objectReference: {fileID: 0}
-    - target: {fileID: 9061616033584334113, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 9180543282389403855, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
-      propertyPath: m_Mass
-      value: 3.9277446
-      objectReference: {fileID: 0}
-    - target: {fileID: 9180543282389403855, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9061616033584334113, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1142138120}
-    - targetCorrespondingSourceObject: {fileID: 9061616033584334113, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1142138121}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0004a0367560a4e88bc3bc3085b1cb3c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
