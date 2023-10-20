@@ -3,9 +3,9 @@
 
 **TITLE OF YOUR GAME (if any)**
 
-| Name       |     |
-| ---------- | --- |
-| Student ID |     |
+| Name       | Umang Sanjeev Gupta |
+| ---------- |---------------------|
+| Student ID | 1005393             |
 
 ## Basic Game Description
 

@@ -21,7 +21,7 @@ public class BurningGhoulMovement : MonoBehaviour
 
     public Animator EnemyAnimator;
     
-    // public AudioSource EnemyAudio;
+    public AudioSource EnemyAudio;
 
     private bool enemyDestroyed = false;
     private Transform enemyParentTransform;
@@ -129,18 +129,23 @@ public class BurningGhoulMovement : MonoBehaviour
 
     public void DestroyEnemy()
     {
+        Debug.Log("destroyed");
+        increaseScore.Invoke(1);
+        
         StartCoroutine(PlayEnemyDieAnimation());
         // enemyParentTransform = gameObject.transform.parent;
         // // Destroy(this.gameObject);
         // this.enemyDestroyed = true;
-        // Debug.Log("destroyed");
+        Debug.Log("destroyed");
         // Debug.Log(enemyDestroyed.ToString());
     }
 
     IEnumerator PlayEnemyDieAnimation()
     {
+        EnemyAnimator.Play("ghoul-die");
         Debug.Log("play die animaiton");
-        yield return new WaitForSecondsRealtime(2);
+        EnemyAudio.PlayOneShot(EnemyAudio.clip);
+        yield return new WaitForSecondsRealtime(EnemyAudio.clip.length);
         gameObject.SetActive(false);
         
         // EnemyAnimator.Play("");

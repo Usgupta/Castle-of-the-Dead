@@ -35,7 +35,15 @@ public class PlayerMovement : MonoBehaviour
     // public GameObject GameOverScreen;
     // public GameObject RestartButton;
     public Animator monkAnimator;
-    // public AudioSource marioAudio;
+    public AudioSource monkAudio;
+
+    public AudioClip monkJumpAudio;
+
+    public AudioClip monkPunchAudio;
+
+    public AudioClip monkKickAudio;
+
+    public AudioClip monkDieAudio;
     // public AudioSource marioDeath;
     public float deathImpulse;
 
@@ -50,6 +58,12 @@ public class PlayerMovement : MonoBehaviour
     // public GameManager gameManager;
     public UnityEvent gameOver;
     public UnityEvent killEnemy;
+
+    public IntVariable gameMana;
+    public UnityEvent<int> changeMana;
+    
+
+    // public UnityEvent<int> changeMana;
     // public UnityEvent playerDamaged;
 
     // Start is called before the first frame update
@@ -64,6 +78,8 @@ public class PlayerMovement : MonoBehaviour
         maxSpeed = gameConstants.maxSpeed;
         upSpeed = gameConstants.upSpeed;
         deathImpulse = gameConstants.deathImpulse;
+        gameMana.Value = 100;
+        // gameMana = new IntVariable();
 
         // speed = 100;
         // maxSpeed = 100;
@@ -177,10 +193,12 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator updateMana()
     {
-        while(mana <=100)
+        while(gameMana.Value <=100)
         {
-            mana = Math.Min(mana+10, 100);
-            Debug.Log("new mana "+mana.ToString());
+            
+            // gameMana.Value = Math.Min(gameMana.Value+10, 100);
+            changeMana.Invoke(5);
+            Debug.Log("new mana "+gameMana.Value.ToString());
             yield return new WaitForSecondsRealtime(3);
             
         }
@@ -238,6 +256,7 @@ public class PlayerMovement : MonoBehaviour
             onGroundState = false;
             monkBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
             monkAnimator.SetBool("onGround", onGroundState);
+            PlayJumpSound();
         }
     }
 
@@ -246,27 +265,31 @@ public class PlayerMovement : MonoBehaviour
             //jump higher
             monkBody.AddForce(Vector2.up * upSpeed * 50, ForceMode2D.Force);
             jumpedState = false;
+            PlayJumpSound();
         }
     }
 
     public void Kick()
     {
-        if (mana >= 30)
+        if (gameMana.Value >= 30)
         {
             monkAnimator.Play("monk-kick");
-            mana = mana - 30;
-            Debug.Log(mana);
+            changeMana.Invoke(-30);
+            // gameMana.Value = gameMana.Value - 30;
+            Debug.Log(gameMana.Value);
+            PlayKickSound();
         }
         
     }
     
     public void Punch()
     {
-        if (mana >= 30)
+        if (gameMana.Value >= 30)
         {
             monkAnimator.Play("monk-punch");
-            mana = mana - 30;
-            Debug.Log(mana);
+            changeMana.Invoke(-30);
+            Debug.Log(gameMana.Value);
+            PlayPunchSound();
         }
         
     }
@@ -286,6 +309,7 @@ public class PlayerMovement : MonoBehaviour
             
             else
             {
+                MonkDie();
                 Debug.Log("kill player");
             }
                 
@@ -319,10 +343,10 @@ public class PlayerMovement : MonoBehaviour
         // }
     // }
 
-    private void MarioDie()
+    private void MonkDie()
     {
-        // marioAnimator.Play("mario-die");
-        alive = false;
+        // monkAnimator.Play("monk-die");
+        // alive = false;
         // DamageMario();
     }
 
@@ -372,14 +396,31 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayJumpSound()
     {
-        // marioAudio.PlayOneShot(marioAudio.clip);
+        monkAudio.PlayOneShot(monkJumpAudio);
+    }
+
+    void PlayWalkSound()
+    {
+        monkAudio.PlayOneShot(monkAudio.clip);
+    }
+    
+    void PlayPunchSound()
+    {
+        monkAudio.PlayOneShot(monkPunchAudio);
+    }
+    
+    void PlayKickSound()
+    {
+        monkAudio.PlayOneShot(monkKickAudio);
     }
 
     void PlayDeathImpluse()
     {
-        monkBody.velocity = Vector2.zero;
-        monkBody.AddForce(Vector2.up * deathImpulse, ForceMode2D.Impulse);
-        // marioDeath.PlayOneShot(marioDeath.clip);
+        // monkBody.velocity = Vector2.zero;
+        // monkBody.AddForce(Vector2.up * deathImpulse, ForceMode2D.Impulse);
+        // monkAudio.PlayOneShot(monkDieAudio);
+        // new WaitForSeconds(2);
+        // this.gameObject.SetActive(false);
     }
 
     // public void GoToEntryAnimationStateForAllPrefabInstances()
