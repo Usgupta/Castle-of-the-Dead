@@ -6,20 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb99cea-fdd4-46c5-94bd-58da97abf7b9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.50033-midterm-partb-Usgupta/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.50033-midterm-partb-Usgupta/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Burning-Ghoul/burning-ghoul-anim.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Burning-Ghoul/burning-ghoul-anim.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GouthinaGame.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GouthinaGame.mixer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/burning-ghoul.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/burning-ghoul.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GhoulScripts/GhoulDestroy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyDestroy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GhoulScripts/GhoulDestroy.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyDestroy.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerScripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerScripts/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameConstants/GameConstants.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameConstants/GameConstants.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameConstants/GameConstants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameConstants/GameConstants.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/GameEventInstances/OnKillEnemy.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/GameEventInstances/OnKillEnemy.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/Listeners/GameEventListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameEvent/Listeners/GameEventListener.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/gothicvania church files/SPRITES/fx/fireball/fireball.ase.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/gothicvania church files/SPRITES/fx/fireball/fireball.ase.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +106,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697718973148</updated>
-      <workItem from="1697718982024" duration="58379000" />
+      <workItem from="1697718982024" duration="63579000" />
     </task>
     <servers />
   </component>
