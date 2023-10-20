@@ -6,24 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb99cea-fdd4-46c5-94bd-58da97abf7b9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.50033-midterm-partb-Usgupta/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.50033-midterm-partb-Usgupta/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Monk/Hurt.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Monk/Hurt.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Monk/Kick.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Monk/Kick.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Monk/Monk.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Monk/Monk.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Monk/Punch.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Monk/Punch.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ActionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ActionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HUDManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HUDManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerScripts/PlayerAnimation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerScripts/PlayerAnimation.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerScripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerScripts/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameConstants/GameConstants.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameConstants/GameConstants.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameConstants/GameConstants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/GameConstants/GameConstants.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WizardScripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WizardScripts/FireballController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WizardScripts/FireballController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WizardScripts/FireballCreator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WizardScripts/FireballCreator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +105,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697718973148</updated>
-      <workItem from="1697718982024" duration="70439000" />
+      <workItem from="1697718982024" duration="73049000" />
     </task>
     <servers />
   </component>
