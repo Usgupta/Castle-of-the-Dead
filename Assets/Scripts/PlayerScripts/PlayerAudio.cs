@@ -26,7 +26,6 @@ public class PlayerAudio : MonoBehaviour
     
     public void PlayJumpSound()
     {
-        Debug.Log("music was calleddddd");
         monkAudio.PlayOneShot(monkJumpAudio);
     }
 

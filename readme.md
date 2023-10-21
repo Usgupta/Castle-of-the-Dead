@@ -18,6 +18,8 @@ Escape the castle by tackling various haunted beings. Killing them, earns you po
 
 ### Game Executable
 
+https://drive.google.com/file/d/1lujtj3xduDZ3cUGim9ck1FTmdLdnVoCb/view?usp=share_link
+
 **State system requirements: Windows, macOS, etc**
 
 Provide a **link** to download your game executable
@@ -33,8 +35,12 @@ Provide a **link** to download your game executable
 | 5    | Kick        | Z                        |
 | 6    | Punch       | X                        |
 
+1. Kick and punch uses mana, the player begins with 100 mana
+2. Each time the player uses kick of punch they lose 30 mana points
+3. Mana periodically replenishes in values of 10
 
 ### Gameplay Video
+https://youtu.be/TNpbHe7TeA0
 
 A ~60s recorded run of your game from start to finish (you may record from Unity editor, show your Game window clearly). You may provide a **working link, or a gif embedded directly here.**
 
@@ -120,6 +126,13 @@ Overall, it enhanced the replaybility of the game
 4. Here it is also used to express emotional elements, for example the pain sounds by player or enemy when they are killed
 
 ### Pink:
+
+#### Feature 59: Create a timer to add a time based challenge to the game. Timer available as UI
+
+1. A timer creates more urgency, keeping the player engaged
+2. In my current game, if the player does not move, then the game will not proceed, hence the timer helps in nudging the player to progress
+3. The timer is voluntarily short that it takes a few times to actually complete it within the time limit keeping the difficulty moderate
+
 
 #### Feature 71: Adopt modular design patterns for code organization for at least 10+ scripts
 

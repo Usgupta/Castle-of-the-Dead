@@ -7,11 +7,7 @@ public class BurningGhoulMovement : MonoBehaviour
     private float originalX;
     private int moveRight = -1;
     private Vector2 velocity;
-
     private Rigidbody2D enemyBody;
-
-    public Vector3 startPosition = new Vector3(0.0f,0.0f,0.0f);
-    
     void Start()
     {
         enemyBody = gameObject.GetComponent<Rigidbody2D>();
@@ -19,6 +15,11 @@ public class BurningGhoulMovement : MonoBehaviour
         originalX = gameObject.transform.localPosition.x;
         ComputeVelocity();
 
+    }
+    
+    public void GameStart()
+    {
+        Start();
     }
     void ComputeVelocity()
     {
@@ -37,14 +38,12 @@ public class BurningGhoulMovement : MonoBehaviour
         }
         else
         {
-            changeDirection();
+            ChangeDirection();
         }
-        
     }
     
-    void changeDirection()
+    void ChangeDirection()
     {
-        Debug.Log("collision");
         moveRight *= -1;
         enemyBody.gameObject.GetComponent<SpriteRenderer>().flipX =
             !enemyBody.gameObject.GetComponent<SpriteRenderer>().flipX;
@@ -54,19 +53,8 @@ public class BurningGhoulMovement : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        changeDirection();
-    }
-
-    public void GameRestart()
-    {      //reset ghoul
-        if(!gameObject.active)
-        {
-            gameObject.SetActive(true);
-        }
-        gameObject.transform.localPosition = new Vector3(originalX,0.0f,0.0f);
-        originalX = gameObject.transform.localPosition.x;
-        ComputeVelocity();
-        
+        if(!(collider.gameObject.CompareTag("Player")))
+            ChangeDirection();
     }
     
 }

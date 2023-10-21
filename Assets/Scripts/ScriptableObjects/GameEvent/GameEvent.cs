@@ -10,11 +10,9 @@ public class GameEvent<T> : ScriptableObject
 
     public void Raise(T data)
     {   
-        Debug.Log("raising event bro  "+ this.name);
         for (int i = eventListeners.Count - 1; i >= 0; i--)
         {
             eventListeners[i].OnEventRaised(data);
-            Debug.Log(eventListeners[i].name);
         }
     }
 

@@ -1,8 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using JetBrains.Annotations;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -29,11 +24,7 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         float desiredX = player.position.x + offset;
-        // Debug.Log("new position is " + desiredX.ToString());
-        // Debug.Log("start is "+ startX.ToString());                
-        // Debug.Log("end is "+ endX.ToString());
         if (desiredX > startX && desiredX < endX)
-
             this.transform.position = new Vector3(desiredX, this.transform.position.y, this.transform.position.z);
         
     }

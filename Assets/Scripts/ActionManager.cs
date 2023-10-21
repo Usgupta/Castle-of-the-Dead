@@ -25,8 +25,6 @@ public class ActionManager : MonoBehaviour
         gameActions.gameplay.jumphold.performed += onJumpHoldAction;
         gameActions.gameplay.move.started += OnMoveAction;
         gameActions.gameplay.move.canceled += OnMoveAction;
-        gameActions.gameplay.kick.started += OnKickAction;
-        gameActions.gameplay.kick.canceled += OnKickAction;
         gameActions.gameplay.kick.performed += OnKickAction;
         gameActions.gameplay.punch.performed += OnPunchAction;
     }
@@ -65,51 +63,12 @@ public class ActionManager : MonoBehaviour
 
         }
     }
-
-    public void OnClickAction(InputAction.CallbackContext context)
-    {
-        if(context.started)
-        {
-            // Debug.Log("mouse click started");
-        }    
-        else if(context.performed)
-        {
-            // Debug.Log("mouse click performed");
-        }
-
-        // else if( context.canceled)
-        //     Debug.Log("mouse click cancelled");
-
-    }
-
-    public void OnPointAction(InputAction.CallbackContext context)
-    {
-       if(context.performed)
-        {
-            
-            Vector2 point = context.ReadValue<Vector2>();
-            // Debug.Log($"mouse pos {point}");
-        }
-
-
-    }
-
+    
     public void OnKickAction(InputAction.CallbackContext context)
     {
         if (context.performed)
         {   
-            Debug.Log("kick action");
             kick.Invoke();
-        }
-        
-    }
-    
-    public void OnMedidateAction(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {   
-            Debug.Log("medidate action");
-            meditate.Invoke();
         }
         
     }
@@ -118,7 +77,6 @@ public class ActionManager : MonoBehaviour
     {
         if (context.performed)
         {   
-            Debug.Log("punch action");
             punch.Invoke();
         }
         

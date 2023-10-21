@@ -7,26 +7,10 @@ using Unity.VisualScripting;
 
 public class HUDManager : MonoBehaviour
 {
-    private Vector3[] scoreTextPosition = {
-       new Vector3(70f, 157, 0),
-         new Vector3(102, -20, 0)
-        };
-    private Vector3[] restartButtonPosition = {
-        new Vector3(866, 454, 0),
-        new Vector3(-68, -234, 0.0f)
-    };
-
-    private Vector3 highScoreTextPosition = new Vector3(51, -123, 0.0f);
-
     public GameObject scoreText;
-    public Transform restartButton;
-
     public GameObject gameOverPanel;
-    public GameObject highScoreText;
     public IntVariable gameScore;
     public IntVariable gameMana;
-    public GameObject BackToMain;
-
     public GameObject manaText;
     
     // Start is called before the first frame update
@@ -36,9 +20,11 @@ public class HUDManager : MonoBehaviour
         gameScore.Value = 0;
         gameOverPanel.SetActive(false);
         Time.timeScale = 1.0f;
+    }
 
-
-        // SceneManager.activeSceneChanged += SetCamera;
+    public void GameStart()
+    {
+        Start();
     }
 
     // Update is called once per frame
@@ -46,46 +32,20 @@ public class HUDManager : MonoBehaviour
     {
 
     }
-
-    // public void GameStart()
-    // {   
-    //     // hide gameover panel
-    //     gameOverPanel.SetActive(false);
-    //     // scoreText.transform.localPosition = scoreTextPosition[0];
-    //     Debug.Log("hello start hud");
-    //     // Debug.Log(scoreText.GetComponent<TextMeshProUGUI>().text);
-    //     // restartButton.localPosition = restartButtonPosition[0];
-    //     // highScoreText.GetComponent<TextMeshProUGUI>().gameObject.SetActive(false);
-    //     // highScoreText.GetComponent<TextMeshProUGUI>().text = "Top -" + gameScore.previousHighestValue.ToString("D6");
-    //     // BackToMain.SetActive(false);
-    //     
-    // }
-
+    
     public void SetScore(int score)
     {   
-        // Debug.Log("i am updating score HUD");
         scoreText.GetComponent<TextMeshProUGUI>().text = "Score: " + gameScore.Value.ToString();
     }
 
     public void SetMana(int mana)
     {
-        Debug.Log("updating ui from hud");
         manaText.GetComponent<TextMeshProUGUI>().text = "Mana: " + gameMana.Value.ToString();
     }
-
-
+    
     public void GameOver()
-    {   Debug.Log("game over hud is called");
+    {
         gameOverPanel.SetActive(true);
-        // scoreText.transform.localPosition = scoreTextPosition[1];
-        // restartButton.localPosition = restartButtonPosition[1];
-        // highScoreText.GetComponent<TextMeshProUGUI>().gameObject.SetActive(true);
-        // highScoreText.GetComponent<TextMeshProUGUI>().text = "Top -" + gameScore.previousHighestValue.ToString("D6");
-        // highScoreText.GetComponent<TextMeshProUGUI>().transform.localPosition = highScoreTextPosition;
-        // BackToMain.SetActive(true);
-
         Time.timeScale = 0.0f;
     }
-
-    
 }

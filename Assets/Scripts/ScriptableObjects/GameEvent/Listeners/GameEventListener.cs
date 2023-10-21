@@ -11,13 +11,11 @@ public class GameEventListener<T> : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("enabling "+ this.gameObject.name);
         Event.RegisterListener(this);
     }
 
     private void OnDisable()
     {
-        Debug.Log("disabling "+ this.gameObject.name);
         Event.UnregisterListener(this);
     }
 

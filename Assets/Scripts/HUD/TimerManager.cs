@@ -12,16 +12,23 @@ public class TimerManager : MonoBehaviour
     public TextMeshProUGUI timeText;
 
     public UnityEvent gameOver;
+
+    public GameConstants gameConstants;
     // Start is called before the first frame update
     void Start()
     {
-        gameTimer.Value = 30;
+        gameTimer.Value = gameConstants.maxTimer;
         StartCoroutine(Timer());
+    }
+    
+    public void GameStart()
+    {
+        Start();
     }
 
     IEnumerator Timer()
     {
-        while (gameTimer.Value > 0)
+        while (gameTimer.Value > 0 && Time.timeScale !=0.0f)
         {
             gameTimer.Value -= 1;
             timeText.text = "Time: " + gameTimer.Value.ToString();

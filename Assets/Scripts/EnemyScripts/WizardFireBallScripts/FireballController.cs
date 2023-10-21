@@ -38,7 +38,6 @@ public class FireballController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("collision happened with"+ collision.gameObject.name);
         if (collision.gameObject.tag == "Enemy")
         {
             // destroy self
@@ -47,7 +46,7 @@ public class FireballController : MonoBehaviour
         
         if (collision.gameObject.tag == "Player")
         {
-            // destroy self
+            // call player damage event
             playerDamaged.Invoke();
             
         }
